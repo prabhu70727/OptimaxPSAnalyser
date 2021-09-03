@@ -23,10 +23,10 @@ public class Main {
 
         System.out.println("Files are filtered...");
 
-        Iterator iterator = files.iterator();
-
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        for (String fullFileName : (Iterable<String>) files) {
+            String []tokens = fullFileName.split("//");
+            String fileName = tokens[tokens.length-1];
+            System.out.println(fileName);
         }
 
     }
