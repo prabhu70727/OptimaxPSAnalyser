@@ -27,7 +27,10 @@ public class Main {
             String fullFileName = file.toString();
             String[] tokens = fullFileName.split("/");
             String fileName = tokens[tokens.length - 1];
-            System.out.println(fileName);
+            tokens = fileName.split("_");
+            String participantID = tokens[0].split("-")[0];
+            long timestamp = Long.parseLong(tokens[tokens.length-1].split("\\.")[0]);
+            System.out.println(timestamp);
         }
 
     }
