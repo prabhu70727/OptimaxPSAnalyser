@@ -75,21 +75,21 @@ public class Main {
         System.out.println("Loading the lists into hash tables");
         int participantListCount = 0;
         for (String participant: participants) {
-            System.out.println("Participant: " + participant);
+            // System.out.println("Participant: " + participant);
             participantMap.put(participant, participantListCount);
             participantListCount++;
         }
 
         int sensorListCount = 0;
         for (String sensor: sensors) {
-            System.out.println("Sensor: " + sensor);
+            // System.out.println("Sensor: " + sensor);
             sensorMap.put(sensor, sensorListCount);
             sensorListCount++;
         }
 
         int dateListCount = 0;
         for (String date: dates) {
-            System.out.println("Date: " + date);
+            // System.out.println("Date: " + date);
             dateMap.put(date, dateListCount);
             dateListCount++;
         }
