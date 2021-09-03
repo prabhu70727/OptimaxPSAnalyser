@@ -21,6 +21,8 @@ public class Main {
                 DirectoryFileFilter.DIRECTORY
         );
 
+        System.out.println("Files are filtered...");
+
         Iterator iterator = files.iterator();
 
         while (iterator.hasNext()) {
