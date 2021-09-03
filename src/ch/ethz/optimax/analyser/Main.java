@@ -5,8 +5,12 @@ import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.RegexFileFilter;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.TimeZone;
 
 public class Main {
 
@@ -30,7 +34,13 @@ public class Main {
             tokens = fileName.split("_");
             String participantID = tokens[0].split("-")[0];
             long timestamp = Long.parseLong(tokens[tokens.length-1].split("\\.")[0]);
-            System.out.println(timestamp);
+            Instant instant = Instant.ofEpochSecond(timestamp * 1000);
+            Date date = Date.from(instant);
+            SimpleDateFormat simpleDateFormat
+                    = new SimpleDateFormat("yyyy-MM-dd");
+            simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT+1"));
+            String dateString = simpleDateFormat.format(date);
+            System.out.println(participantID + " " + dateString);
         }
 
     }
