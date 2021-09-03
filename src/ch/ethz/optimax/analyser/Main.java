@@ -134,7 +134,7 @@ public class Main {
                 System.out.println("Error in index...");
                 return;
             }
-            participantsSensorsDatesCount[participantIndex][sensorIndex][dateIndex] = 0;
+            participantsSensorsDatesCount[participantIndex][sensorIndex][dateIndex]++;
         }
         System.out.println("The number of files processed is: " + countFiles);
 
