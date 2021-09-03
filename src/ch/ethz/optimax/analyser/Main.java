@@ -34,7 +34,7 @@ public class Main {
             tokens = fileName.split("_");
             String participantID = tokens[0].split("-")[0];
             long timestamp = Long.parseLong(tokens[tokens.length-1].split("\\.")[0]);
-            Instant instant = Instant.ofEpochSecond(timestamp * 1000);
+            Instant instant = Instant.ofEpochSecond(timestamp);
             Date date = Date.from(instant);
             SimpleDateFormat simpleDateFormat
                     = new SimpleDateFormat("yyyy-MM-dd");
