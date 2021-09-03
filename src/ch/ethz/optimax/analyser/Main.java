@@ -145,9 +145,9 @@ public class Main {
                     long value = participantsSensorsDatesCount[i][j][k];
                     if (value == 0) continue;
                     System.out.println("Participant: " + participants.get(i) +
-                            "Sensor: " + sensors.get(j) +
-                            "Date: " + dates.get(k) +
-                            "Count" + value);
+                            " Sensor: " + sensors.get(j) +
+                            " Date: " + dates.get(k) +
+                            " Count" + value);
                 }
             }
         }
