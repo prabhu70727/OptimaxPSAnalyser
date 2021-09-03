@@ -12,6 +12,7 @@ import java.util.Iterator;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("Starting...");
         HashMap dateCountHashMap = new HashMap <String, HashMap<String, HashMap<String, Integer>>> ();
 
         Collection files = FileUtils.listFiles(
