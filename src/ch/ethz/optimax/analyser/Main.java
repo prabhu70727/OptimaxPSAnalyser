@@ -17,7 +17,7 @@ public class Main {
 
         Collection files = FileUtils.listFiles(
                 new File(Config.rootDir),
-                new RegexFileFilter("^.*-om_\\.zip$"),
+                new RegexFileFilter("^.*-om_.*\\.zip$"),
                 DirectoryFileFilter.DIRECTORY
         );
 
