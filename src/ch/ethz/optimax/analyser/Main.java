@@ -147,7 +147,8 @@ public class Main {
         System.out.println("Making the sensor files...");
         for (int j=0; j < sensorListCount; j++) {
             BufferedWriter writer
-                    = new BufferedWriter(new FileWriter(Config.analysisDir + "/" + sensors.get(j)));
+                    = new BufferedWriter(new FileWriter(Config.analysisDir + "/"
+                        + sensors.get(j)+".csv"));
             writer.write("Participant, ");
             for (int k=0; k < dateListCount; k++) {
                 if (k < dateListCount-1) writer.write(dates.get(k) + ", ");
