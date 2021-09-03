@@ -25,7 +25,7 @@ public class Main {
 
         for (Object file : files) {
             String fullFileName = file.toString();
-            String[] tokens = fullFileName.split("//");
+            String[] tokens = fullFileName.split("/");
             String fileName = tokens[tokens.length - 1];
             System.out.println(fileName);
         }
