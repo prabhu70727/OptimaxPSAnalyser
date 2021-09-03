@@ -4,14 +4,17 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import org.apache.commons.io.filefilter.RegexFileFilter;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Starting...");
         List<String> participants = new ArrayList<>();
         List<String> sensors = new ArrayList<>();
@@ -141,18 +144,24 @@ public class Main {
         }
         System.out.println("The number of files processed is: " + countFiles);
 
-        System.out.println("Printing the 3D array");
-        for (int i=0; i < participantListCount; i++) {
-            for (int j=0; j < sensorListCount; j++) {
-                for (int k=0; k < dateListCount; k++) {
-                    long value = participantsSensorsDatesCount[i][j][k];
-                    if (value == 0) continue;
-                    /*System.out.println("Participant: " + participants.get(i) +
-                            " Sensor: " + sensors.get(j) +
-                            " Date: " + dates.get(k) +
-                            " Count: " + value);*/
+        System.out.println("Making the sensor files...");
+        for (int j=0; j < sensorListCount; j++) {
+            BufferedWriter writer
+                    = new BufferedWriter(new FileWriter(Config.analysisDir + "/" + sensors.get(j)));
+            writer.write("Participant, ");
+            for (int k=0; k < dateListCount; k++) {
+                if (k < dateListCount-1) writer.write(dates.get(k) + ", ");
+                else writer.write(dates.get(k) + "\n");
+            }
+
+            for (int i=0; i < participantListCount; i++) {
+                writer.write(participants.get(i) + ", ");
+                for (int k = 0; k < dateListCount; k++) {
+                    if (k < dateListCount - 1) writer.write(participantsSensorsDatesCount[i][j][k] + ", ");
+                    else writer.write(participantsSensorsDatesCount[i][j][k] + "\n");
                 }
             }
+            writer.close();
         }
     }
 }
