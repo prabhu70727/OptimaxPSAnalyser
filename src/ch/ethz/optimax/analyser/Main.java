@@ -147,7 +147,7 @@ public class Main {
                     System.out.println("Participant: " + participants.get(i) +
                             " Sensor: " + sensors.get(j) +
                             " Date: " + dates.get(k) +
-                            " Count" + value);
+                            " Count: " + value);
                 }
             }
         }
