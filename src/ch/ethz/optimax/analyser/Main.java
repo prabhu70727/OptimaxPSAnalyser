@@ -13,12 +13,11 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Starting...");
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
         HashMap dateCountHashMap = new HashMap <String, HashMap<String, HashMap<String, Integer>>> ();
 
         Collection files = FileUtils.listFiles(
                 new File(Config.rootDir),
-                new RegexFileFilter("^.*\\.xml$"),
+                new RegexFileFilter("^.*-om_\\.zip$"),
                 DirectoryFileFilter.DIRECTORY
         );
 
