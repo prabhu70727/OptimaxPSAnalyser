@@ -15,7 +15,7 @@ public class Main {
         HashMap dateCountHashMap = new HashMap <String, HashMap<String, HashMap<String, Integer>>> ();
 
         Collection files = FileUtils.listFiles(
-                new File("./"),
+                new File(Config.rootDir),
                 new RegexFileFilter("^.*\\.xml$"),
                 DirectoryFileFilter.DIRECTORY
         );
